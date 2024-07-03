@@ -1,0 +1,29 @@
+DESCRIPTION:
+Write a program to generate the given pattern.
+1 2 3 4 5 
+1 2 3 4 
+1 2 3 
+1 2 
+1 
+
+INPUT & OUTPUT FORMAT:
+Input consists of a single integer, n.
+Refer to the sample input and output for formatting specifications.
+
+SAMPLE INPUT:
+5
+SAMPLE OUTPUT:
+1 2 3 4 5 
+1 2 3 4 
+1 2 3 
+1 2 
+1 
+
+Solution:
+
+n=int(input())
+for i in range(n,0,-1):
+    for j in range(0,i):
+        print(j+1,end=" ")
+    print()    
+    
