@@ -1,0 +1,48 @@
+You've created a set containing all the movies on your watchlist. 
+However, you might have accidentally added some movies twice, or you might have changed your mind about watching some.
+
+Input Format:
+The input will start with an integer n, the number of movies added to the watchlist.
+The next n lines will each contain the name of a movie (a string).
+The next line will contain an integer m, the number of movies to be removed from the watchlist.
+The following m lines will each contain the name of a movie to be removed (a string).
+
+Output Format:
+The output will be the list of remaining movies on the watchlist, each on a new line, in lexicographical order.
+
+Sample Input:
+6
+Inception
+The Godfather
+The Dark Knight
+Pulp Fiction
+Inception
+Forrest Gump
+2
+The Godfather
+Pulp Fiction
+
+Sample Output:
+Forrest Gump
+Inception
+The Dark Knight
+
+
+Solution:
+
+n=int(input())
+wm=[]
+rm=[]
+for i in range(0,n):
+    sub=input()
+    wm.append(sub)
+    se=set(wm)
+r=int(input())
+for i in range(0,r):
+    rs=input()
+    rm.append(rs)
+se2=set(rm)
+se3=se.difference(se2)
+se4=sorted(se3)
+for i in se4:
+    print(i)
