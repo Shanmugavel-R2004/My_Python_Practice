@@ -1,0 +1,40 @@
+You are a software developer working on a program that manages student records for a school. 
+Each student's record is represented as a tuple, where each element contains specific information such as the student's name, age, and grade. 
+Occasionally, you need to remove a student record from the database due to various reasons such as graduation or withdrawal from the school. 
+Your task is to write a Python program to remove a student record from the database.
+
+Input Format:
+First Line consists of Students Details(Name,Age,Grade )separated by comma.Every student details is separated by semicolon
+Second Line of Input consists of the index to be removed in the tuple.
+
+Note: If You enter the index number,which is greater than the length of tuple,it must display Invalid index 
+
+Output Format:
+output shows the resultant tuple.
+
+Sample Input:
+Gokul,18,O+;Gowtham,19,O-;Haniel,20,A+
+1
+
+Sample Output:
+
+(('Gokul', 18, 'O+'), ('Haniel', 20, 'A+'))
+First index is removed,it shows the resultant tuple
+
+Solution:
+
+overall_lst=tuple(map(str,input().split(";")))
+new_lst=[] 
+for i in overall_lst:
+    lst=[]
+    name,age,grade=i.split(",")
+    lst.append(name)
+    lst.append(int(age))
+    lst.append(grade)
+    new_lst.append(tuple(lst))
+ind=int(input())
+if(ind<len(new_lst)):
+    new_lst.pop(ind)
+    print(tuple(new_lst))
+else:
+    print("Invalid index")
