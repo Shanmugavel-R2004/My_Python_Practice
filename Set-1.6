@@ -1,0 +1,47 @@
+You and your friend are both gamers, and you want to find common ground for your next multiplayer session. 
+You each create a set containing your favorite video games.
+
+Input Format:
+1)The input will start with an integer n, the number of favorite games for the first gamer.
+2)The next n lines will each contain the name of a game (a string).
+3)The next line will contain an integer m, the number of favorite games for the second gamer.
+4)The following m lines will each contain the name of a game (a string).
+
+Output Format:
+The output will be the list of common favorite games, each on a new line, in lexicographical order.
+
+Sample Input:
+5
+Fortnite
+Apex Legends
+Call of Duty
+Overwatch
+Minecraft
+4
+Minecraft
+League of Legends
+Fortnite
+Valorant
+
+Sample Output:
+Fortnite
+Minecraft
+
+Solution:
+
+n=int(input())
+wm=[]
+rm=[]
+for i in range(0,n):
+    sub=input()
+    wm.append(sub)
+    se=set(wm)
+r=int(input())
+for i in range(0,r):
+    rs=input()
+    rm.append(rs)
+se2=set(rm)
+se3=se.intersection(se2)
+se4=sorted(se3)
+for i in se4:
+    print(i)
